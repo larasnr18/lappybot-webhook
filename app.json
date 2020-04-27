@@ -1,6 +1,6 @@
 {
-  "name": "Lappybot-webhook",
-  "description": "Webhook echo sample",
-  "repository": "https://github.com/SunilSyal/Webhook-and-API.AI-Samples.git",
+  "name": "lappybot-webhook",
+  "description": "webhook untuk lappybot",
+  "repository": "https://github.com/larasn6706174044/lappybot-webhook.git",
   "keywords": ["api.ai", "dialogflow", "natural language"]
 }
