@@ -1,0 +1,6 @@
+{
+  "name": "lappybot-webhook",
+  "description": "webhook untuk lappybot",
+  "repository": "https://github.com/larasn6706174044/lappybot-webhook.git",
+  "keywords": ["api.ai", "dialogflow", "natural language"]
+}
