@@ -2,6 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const { getNumberOfFollowers } = require("./try");
 
 const restService = express();
 
@@ -13,13 +14,17 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-restService.post("/echo", function (req, res) {
+restService.post("/echo", async function (req, res) {
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
+
+  const data = await getNumberOfFollowers();
+  console.log(data);
+  response = "ini khusus" + JSON.stringify(data);
 
   var speechResponse = {
     google: {
@@ -28,7 +33,7 @@ restService.post("/echo", function (req, res) {
         items: [
           {
             simpleResponse: {
-              textToSpeech: speech,
+              textToSpeech: response,
             },
           },
         ],
