@@ -29,7 +29,6 @@ restService.post("/echo", function (req, res) {
     // console.log(data);
     // response = "ini khusus" + JSON.stringify(data);
     // speech = "ini angka";
-    speech = "ini angka";
   }
 
   var speechResponse = {
