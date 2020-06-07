@@ -25,35 +25,35 @@ restService.post("/echo", function (req, res) {
   if (speech == "123") {
     getNumberOfFollowers().then((data) => {
       speech = data;
+      var speechResponse = {
+        google: {
+          expectUserResponse: true,
+          richResponse: {
+            items: [
+              {
+                simpleResponse: {
+                  textToSpeech: speech,
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      return res.json({
+        payload: speechResponse,
+        //data: speechResponse,
+        fulfillmentText: speech,
+        speech: speech,
+        displayText: speech,
+        source: "webhook-echo-sample",
+      });
     });
+
     // console.log(data);
     // response = "ini khusus" + JSON.stringify(data);
     // speech = "ini angka";
   }
-
-  var speechResponse = {
-    google: {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: speech,
-            },
-          },
-        ],
-      },
-    },
-  };
-
-  return res.json({
-    payload: speechResponse,
-    //data: speechResponse,
-    fulfillmentText: speech,
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample",
-  });
 });
 
 restService.post("/audio", function (req, res) {

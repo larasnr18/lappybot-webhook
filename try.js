@@ -13,6 +13,6 @@ async function getNumberOfFollowers() {
   return "hello";
 }
 
-// getNumberOfFollowers();
+getNumberOfFollowers();
 
 module.exports = { getNumberOfFollowers };
