@@ -21,6 +21,10 @@ restService.post("/echo", function (req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
 
+  if (speech == "123") {
+    speech = "ini angka";
+  }
+
   var speechResponse = {
     google: {
       expectUserResponse: true,
