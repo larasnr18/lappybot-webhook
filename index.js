@@ -24,7 +24,7 @@ restService.post("/echo", function (req, res) {
 
   if (speech == "123") {
     getNumberOfFollowers().then((data) => {
-      speech = JSON.stringify(data);
+      speech = "Lokasi: " + data.location;
       var speechResponse = {
         google: {
           expectUserResponse: true,
