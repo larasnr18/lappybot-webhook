@@ -10,7 +10,7 @@ async function getNumberOfFollowers() {
   // console.log(`# of followers: ${nOfFollowers}`);
   // console.log(`Location: ${location}`);
 
-  return "hello";
+  return data;
 }
 
 getNumberOfFollowers();
