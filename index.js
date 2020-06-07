@@ -23,9 +23,9 @@ restService.post("/echo", function (req, res) {
       : "Seems like some problem. Speak again.";
 
   if (speech == "123") {
-    getNumberOfFollowers().then((data) => {
-      speech = "ini angka " + JSON.stringify(data);
-    });
+    // getNumberOfFollowers().then((data) => {
+    //   speech = "ini angka " + JSON.stringify(data);
+    // });
     // console.log(data);
     // response = "ini khusus" + JSON.stringify(data);
     // speech = "ini angka";
