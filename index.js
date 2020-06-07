@@ -2,6 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const { getNumberOfFollowers } = require("./try");
 
 const restService = express();
 
@@ -22,7 +23,12 @@ restService.post("/echo", function (req, res) {
       : "Seems like some problem. Speak again.";
 
   if (speech == "123") {
-    speech = "ini angka";
+    getNumberOfFollowers().then((data) => {
+      speech = "ini angka " + JSON.stringify(data);
+    });
+    // console.log(data);
+    // response = "ini khusus" + JSON.stringify(data);
+    // speech = "ini angka";
   }
 
   var speechResponse = {
