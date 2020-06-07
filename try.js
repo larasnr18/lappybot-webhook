@@ -7,12 +7,12 @@ async function getNumberOfFollowers() {
   let location = res.data.location;
 
   const data = { nOfFollowers, location };
-  console.log(`# of followers: ${nOfFollowers}`);
-  console.log(`Location: ${location}`);
+  // console.log(`# of followers: ${nOfFollowers}`);
+  // console.log(`Location: ${location}`);
 
-  return data;
+  return "hello";
 }
 
-getNumberOfFollowers();
+// getNumberOfFollowers();
 
 module.exports = { getNumberOfFollowers };

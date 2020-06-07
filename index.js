@@ -24,7 +24,7 @@ restService.post("/echo", function (req, res) {
 
   if (speech == "123") {
     getNumberOfFollowers().then((data) => {
-      speech = "ini angka " + JSON.stringify(data);
+      speech = data;
     });
     // console.log(data);
     // response = "ini khusus" + JSON.stringify(data);
