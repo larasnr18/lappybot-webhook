@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { getNumberOfFollowers } = require("./try");
+const { getLaptop } = require("./laptop-api");
 
 const restService = express();
 
@@ -23,8 +24,8 @@ restService.post("/echo", function (req, res) {
       : "Seems like some problem. Speak again.";
 
   if (speech == "123") {
-    getNumberOfFollowers().then((data) => {
-      speech = "Lokasi: " + data.location;
+    getLaptop().then((data) => {
+      speech = "Laptop: " + data.namaLaptop + "\n Merk: " + data.merkLaptop;
       var speechResponse = {
         google: {
           expectUserResponse: true,
