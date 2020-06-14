@@ -25,7 +25,8 @@ restService.post("/echo", function (req, res) {
 
   if (speech == "123") {
     getLaptop().then((data) => {
-      speech = "Laptop: " + data.namaLaptop + "\n Merk: " + data.merkLaptop;
+      speech =
+        "Laptop: " + data[0].namaLaptop + "\n Merk: " + data[0].merkLaptop;
       var speechResponse = {
         google: {
           expectUserResponse: true,
