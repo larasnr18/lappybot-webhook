@@ -15,18 +15,17 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-restService.post("/echo", function (req, res) {
+restService.post("/pickIntent", function (req, res) {
   var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.echoText
-      ? req.body.queryResult.parameters.echoText
+    req.body.queryResult.parameters.priceRange
+      ? req.body.queryResult.parameters.priceRange
       : "Seems like some problem. Speak again.";
 
-  if (speech == "123") {
+  if (speech == "high end") {
     getLaptop().then((data) => {
-      speech =
-        "Laptop: " + data[0].namaLaptop + "\n Merk: " + data[0].merkLaptop;
+      speech = "Laptop: " + data.namaLaptop + "\n Merk: " + data.merkLaptop;
       var speechResponse = {
         google: {
           expectUserResponse: true,
